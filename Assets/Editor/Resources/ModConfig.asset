@@ -14,7 +14,10 @@ MonoBehaviour:
   id: neverFadeAway
   title: Never Fade Away
   author: TasThiluna
-  description: 
+  description: "Wake the fuck up, defuser! We have a bomb to solve.\n\nMade for the
+    December 2025 modder secret Santa event, for GhostSalt.\n\n\rModule idea and implementation
+    by TasThiluna. \n\n[url=ktane.timwi.de/HTML/Never Fade Away.html]Manual HTML[/url]\n[url=ktane.timwi.de/PDF/Never
+    Fade Away.pdf]Manual PDF[/url]"
   version: 1.0
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: b9191bbe8957a284c9d84c096f0d49df, type: 3}
