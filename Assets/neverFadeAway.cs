@@ -59,7 +59,7 @@ public class neverFadeAway : MonoBehaviour
         fortuneButton.gameObject.SetActive(false);
         StartCoroutine(BackgroundAnimation());
         var allRules = new string[3][];
-        var attempts = 0;
+        var attempts = 1;
     tryAgain:
         cardFaces = Enumerable.Repeat(Enumerable.Repeat(-1, 3).ToArray(), 3).ToArray();
         correctCards = Enumerable.Repeat(-1, 3).ToArray();
@@ -71,7 +71,7 @@ public class neverFadeAway : MonoBehaviour
             cardFaces[i] = Enumerable.Range(0, 22).ToList().Shuffle().Take(3).ToArray();
             glitchFrequencies[i] = Enumerable.Range(0, 3).ToList().Shuffle().ToArray();
             glitchDurations[i] = Enumerable.Range(0, 3).ToList().Shuffle().ToArray();
-            allReversals[i] = Enumerable.Repeat(rnd.Range(0, 2) == 0 ? true : false, 3).ToArray();
+            allReversals[i] = Enumerable.Range(0, 3).Select(x => rnd.Range(0, 2) == 0).ToArray();
             string[] rules;
             var thisStage = CheckSolution(i, cardFaces[i], glitchFrequencies[i], glitchDurations[i], allReversals[i], out rules);
             allRules[i] = rules.ToArray();
@@ -133,7 +133,7 @@ public class neverFadeAway : MonoBehaviour
             else
             {
                 var ix = (i + (rule[0] == '<' ? 2 : 1)) % 3;
-                thisStage[i] = rule.Last() == 'F' ? frequencies[ix] == "SMF".IndexOf(rule[0]) : durations[ix] == "SMF".IndexOf(rule[0]);
+                thisStage[i] = rule.Last() == 'F' ? frequencies[ix] == "SMF".IndexOf(rule[1]) : durations[ix] == "SMF".IndexOf(rule[1]);
             }
             if (reversals[i])
                 thisStage[i] = !thisStage[i];
@@ -202,56 +202,56 @@ public class neverFadeAway : MonoBehaviour
                             calcSequence[2] = tempHieB;
                             break;
                         case "The Lovers":
-                            calcSequence[0] = (calcSequence[0] + 1) % 3;
+                            calcSequence[0] = (calcSequence[0] % 3) + 1;
                             break;
                         case "The Chariot":
-                            calcSequence[1] = (calcSequence[1] + 1) % 3;
+                            calcSequence[1] = (calcSequence[1] % 3) + 1;
                             break;
                         case "Strength":
-                            calcSequence[2] = (calcSequence[2] + 1) % 3;
+                            calcSequence[2] = (calcSequence[2] % 3) + 1;
                             break;
                         case "The Hermit":
-                            calcSequence[0] = (calcSequence[0] + 2) % 3;
+                            calcSequence[0] = ((calcSequence[0] + 1) % 3) + 1;
                             break;
                         case "Wheel of Fortune":
-                            calcSequence[0] = (calcSequence[1] + 2) % 3;
+                            calcSequence[1] = ((calcSequence[1] + 1) % 3) + 1;
                             break;
                         case "Justice":
-                            calcSequence[0] = (calcSequence[2] + 2) % 3;
+                            calcSequence[2] = ((calcSequence[2] + 1) % 3) + 1;
                             break;
                         case "The Hanged Man":
-                            calcSequence[0] = (calcSequence[0] + 1) % 3;
-                            calcSequence[0] = (calcSequence[1] + 1) % 3;
-                            calcSequence[0] = (calcSequence[2] + 1) % 3;
+                            calcSequence[0] = (calcSequence[0] % 3) + 1;
+                            calcSequence[1] = (calcSequence[1] % 3) + 1;
+                            calcSequence[2] = (calcSequence[2] % 3) + 1;
                             break;
                         case "Death":
-                            calcSequence[0] = (calcSequence[0] + 2) % 3;
-                            calcSequence[0] = (calcSequence[1] + 2) % 3;
-                            calcSequence[0] = (calcSequence[2] + 2) % 3;
+                            calcSequence[0] = ((calcSequence[0] + 1) % 3) + 1;
+                            calcSequence[1] = ((calcSequence[1] + 1) % 3) + 1;
+                            calcSequence[2] = ((calcSequence[2] + 1) % 3) + 1;
                             break;
                         case "Temperance":
-                            calcSequence[0] = (calcSequence[1] + 1) % 3;
-                            calcSequence[0] = (calcSequence[2] + 1) % 3;
+                            calcSequence[1] = (calcSequence[1] % 3) + 1;
+                            calcSequence[2] = (calcSequence[2] % 3) + 1;
                             break;
                         case "The Devil":
-                            calcSequence[0] = (calcSequence[0] + 1) % 3;
-                            calcSequence[0] = (calcSequence[2] + 1) % 3;
+                            calcSequence[0] = (calcSequence[0] % 3) + 1;
+                            calcSequence[2] = (calcSequence[2] % 3) + 1;
                             break;
                         case "The Tower":
-                            calcSequence[0] = (calcSequence[0] + 1) % 3;
-                            calcSequence[0] = (calcSequence[1] + 1) % 3;
+                            calcSequence[0] = (calcSequence[0] % 3) + 1;
+                            calcSequence[1] = (calcSequence[1] % 3) + 1;
                             break;
                         case "The Star":
-                            calcSequence[0] = (calcSequence[1] + 2) % 3;
-                            calcSequence[0] = (calcSequence[2] + 2) % 3;
+                            calcSequence[1] = ((calcSequence[1] + 1) % 3) + 1;
+                            calcSequence[2] = ((calcSequence[2] + 1) % 3) + 1;
                             break;
                         case "The Moon":
-                            calcSequence[0] = (calcSequence[0] + 2) % 3;
-                            calcSequence[0] = (calcSequence[2] + 2) % 3;
+                            calcSequence[0] = ((calcSequence[0] + 1) % 3) + 1;
+                            calcSequence[2] = ((calcSequence[2] + 1) % 3) + 1;
                             break;
-                        case "The Sun:":
-                            calcSequence[0] = (calcSequence[0] + 2) % 3;
-                            calcSequence[0] = (calcSequence[1] + 2) % 3;
+                        case "The Sun":
+                            calcSequence[0] = ((calcSequence[0] + 1) % 3) + 1;
+                            calcSequence[1] = ((calcSequence[1] + 1) % 3) + 1;
                             break;
                         case "Judgement":
                             calcSequence[1] = calcSequence[0];
@@ -266,7 +266,7 @@ public class neverFadeAway : MonoBehaviour
                 }
                 if (calcSequence[0] == calcSequence[1] && calcSequence[1] == calcSequence[2])
                 {
-                    calcSequence[1] = (calcSequence[1] + 1) % 3;
+                    calcSequence[1] = (calcSequence[1] % 3) + 1;
                     Debug.LogFormat("[Never Fade Away #{0}] All three digits of the final sequence are identical. Increment the middle one by 1 to get {1}.", moduleId, calcSequence.Join(", "));
                 }
                 var sequences = "321,112,213,113,121,212|313,311,131,132,123,232|332,223,331,231,322,312|221,133,122,233,323,211".Split('|').Select(x => x.Split(',')).ToArray();
@@ -326,7 +326,8 @@ public class neverFadeAway : MonoBehaviour
         {
             StopCoroutine(cardGlitchingBaseCoroutines[i]);
             cardGlitchingBaseCoroutines[i] = null;
-            StopCoroutine(cardGlitchingEffectCoroutines[i]);
+            if (cardGlitchingEffectCoroutines[i] != null)
+                StopCoroutine(cardGlitchingEffectCoroutines[i]);
             cardGlitchingEffectCoroutines[i] = null;
         }
         foreach (Renderer card in cardFaceRenderers)
@@ -349,7 +350,8 @@ public class neverFadeAway : MonoBehaviour
         {
             StopCoroutine(cardGlitchingBaseCoroutines[i]);
             cardGlitchingBaseCoroutines[i] = null;
-            StopCoroutine(cardGlitchingEffectCoroutines[i]);
+            if (cardGlitchingEffectCoroutines[i] != null)
+                StopCoroutine(cardGlitchingEffectCoroutines[i]);
             cardGlitchingEffectCoroutines[i] = null;
         }
         foreach (Renderer card in cardFaceRenderers)

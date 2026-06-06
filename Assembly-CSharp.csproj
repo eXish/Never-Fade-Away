@@ -262,31 +262,31 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="0Harmony">
- <HintPath>C:/KtaneMods/Never-Fade-Away/Assets/Plugins/Managed/0Harmony.dll</HintPath>
+ <HintPath>C:/Users/brend/OneDrive/Documents/GitHub/Never-Fade-Away/Assets/Plugins/Managed/0Harmony.dll</HintPath>
  </Reference>
  <Reference Include="DotNetZip">
- <HintPath>C:/KtaneMods/Never-Fade-Away/Assets/Plugins/Managed/DotNetZip.dll</HintPath>
+ <HintPath>C:/Users/brend/OneDrive/Documents/GitHub/Never-Fade-Away/Assets/Plugins/Managed/DotNetZip.dll</HintPath>
  </Reference>
  <Reference Include="KMFramework">
- <HintPath>C:/KtaneMods/Never-Fade-Away/Assets/Plugins/Managed/KMFramework.dll</HintPath>
+ <HintPath>C:/Users/brend/OneDrive/Documents/GitHub/Never-Fade-Away/Assets/Plugins/Managed/KMFramework.dll</HintPath>
  </Reference>
  <Reference Include="KtaneModkitPatches">
- <HintPath>C:/KtaneMods/Never-Fade-Away/Assets/Plugins/Managed/KtaneModkitPatches.dll</HintPath>
+ <HintPath>C:/Users/brend/OneDrive/Documents/GitHub/Never-Fade-Away/Assets/Plugins/Managed/KtaneModkitPatches.dll</HintPath>
  </Reference>
  <Reference Include="KTMissionGetter">
- <HintPath>C:/KtaneMods/Never-Fade-Away/Assets/Plugins/Managed/KTMissionGetter.dll</HintPath>
+ <HintPath>C:/Users/brend/OneDrive/Documents/GitHub/Never-Fade-Away/Assets/Plugins/Managed/KTMissionGetter.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/KtaneMods/Never-Fade-Away/Assets/Plugins/Managed/Newtonsoft.Json.dll</HintPath>
+ <HintPath>C:/Users/brend/OneDrive/Documents/GitHub/Never-Fade-Away/Assets/Plugins/Managed/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Users/Cora/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>C:/Users/brend/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Users/Cora/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
+ <HintPath>C:/Users/brend/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
- <HintPath>C:/Users/Cora/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/brend/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
